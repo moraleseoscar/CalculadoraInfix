@@ -70,6 +70,8 @@ public class PilaArrays extends StackPila{
 		input = input.replaceAll(" ","");
 		for(String ch: input.split("")) {
 			try {
+				//Condicional que analiza el operador
+				//Suma, resta, multiplicacion, division, potencia
 				switch(ch){
 				case "+":
 					operandoA = Double.parseDouble(pop());
@@ -89,15 +91,19 @@ public class PilaArrays extends StackPila{
 					resultado = operandoA * operandoB;
 					push(resultado.toString());
 					break;
+				//Condicional de division
 				case "/":
 					operandoA = Double.parseDouble(pop());
 					operandoB = Double.parseDouble(pop());
+					//Condicional para verificar que no haya
+					//una división inválida.
 					if(operandoB == 0) {
 						resultado = 0.0;
 					}
 					resultado = operandoA / operandoB;
 					push(resultado.toString());
 					break;
+				//Funciion que recorre el String
 				default:
 					try {
 						Double test = Double.parseDouble(ch);
@@ -106,6 +112,7 @@ public class PilaArrays extends StackPila{
 				}
 			}catch(Exception NoSuchElementException) {}
 		}
+		//Retorna la variable resultado
 		return resultado;
 	}
 }
