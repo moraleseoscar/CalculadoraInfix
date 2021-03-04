@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 /**
- * @author Oscar
+ * @author Oscar Estrada y Marcelo Calderon
  *
  */
-public class PilaArrays extends Stack{
+public class PilaArrays extends StackPila{
 	private ArrayList<String> lista = new ArrayList<String>();
 	
 	/** 

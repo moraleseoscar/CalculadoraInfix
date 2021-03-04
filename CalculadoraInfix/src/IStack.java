@@ -1,5 +1,5 @@
 /**
- * @author Oscar Estrada 
+ * @author Oscar Estrada y Marcelo Calderon
  *
  */
 public interface IStack{

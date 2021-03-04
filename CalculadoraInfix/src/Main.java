@@ -1,7 +1,8 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * @author Oscar Estrada
+ * @author Oscar Estrada y Marcelo Calderon
  *
  */
 public class Main {
@@ -15,20 +16,33 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		Fabrica fab = new Fabrica();
 		
-		Stack pila = null;
+		StackPila pila = null;
+		boolean menu = true;
 		
-		System.out.println("Seleccione el número de la acción que desea realizar: ");
-		System.out.println("1. ArrayList");
-		System.out.println("2. Vector");
-		System.out.println("3. Listas");
-        int sel = sc.nextInt();
-        
-        pila = fab.tipoPila(sel);
-        
-        
-        String postfix = pila.leerDocumento();
-        System.out.println("Resultado: " + pila.resolver(postfix));
-        
+		while (menu) {
+			System.out.println("");
+			System.out.println("Tipos de pilas: \n------------------------");
+			System.out.println("1. ArrayList");
+			System.out.println("2. Vector");
+			System.out.println("3. Listas");
+			System.out.println("0. Salir");
+			System.out.print("Seleccione el numero de la accion que desea realizar: ");
+	        int sel = sc.nextInt();
+	        sc.nextLine();
+	        while(sel < 0 || sel > 3) {
+	        	System.out.print("Seleccion fuera de rango. Intente de nuevo:");
+	            sel = sc.nextInt();
+	            sc.nextLine();
+			}
+	        System.out.println("");
+	        if(sel == 0) {
+	        	menu = false;
+	        }else{
+	        	pila = fab.tipoPila(sel);
+		        
+		        String postfix = pila.infix_postfix(pila.leerDocumento());
+		        System.out.println("Resultado: " + pila.resolver(postfix));
+	        }
+		}
 	}
-
 }

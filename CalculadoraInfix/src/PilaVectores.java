@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 /**
- * @author Oscar
+ * @author Oscar Estrada y Marcelo Calderon
  *
  */
-public class PilaVectores extends Stack{
+public class PilaVectores extends StackPila{
 	private Vector<String> vector = new Vector<String>();
 	
 	/** 

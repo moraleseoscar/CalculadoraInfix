@@ -1,19 +1,19 @@
 /**
- * @author Oscar Estrada 
+ * @author Oscar Estrada y Marcelo Calderon
  *
  */
 public class Fabrica {
 	
-	public Stack tipoPila(int tipo) {
+	public StackPila tipoPila(int tipo) {
 		
-		Stack tipoPila = null;
+		StackPila tipoPila = null;
 		
 		if(tipo == 1) {
 			return  new PilaArrays();
 		}else if (tipo == 2){
 			return  new PilaVectores();
 		}else if (tipo == 3) {
-			return  new PilaArrays();
+			return new PilaLists();
 		}else return null;
 
 	}
