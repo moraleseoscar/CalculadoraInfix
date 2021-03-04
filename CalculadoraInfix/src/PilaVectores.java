@@ -70,8 +70,12 @@ public class PilaVectores extends StackPila{
 		Double resultado = 0.0;
 		input = input.replaceAll(" ","");
 		for(String ch: input.split("")) {
+		//Funcion que va provando los valores dentro de la pila
 			try {
+				//Condicional que almacena los posibles casos
 				switch(ch){
+				//Recorre el string para encontrar un operando
+				//Suma, resta, multiplicacion, division, potencia
 				case "+":
 					operandoA = Double.parseDouble(pop());
 					operandoB = Double.parseDouble(pop());
@@ -90,6 +94,7 @@ public class PilaVectores extends StackPila{
 					resultado = operandoA * operandoB;
 					push(resultado.toString());
 					break;
+				//Caso para division
 				case "/":
 					operandoA = Double.parseDouble(pop());
 					operandoB = Double.parseDouble(pop());
@@ -99,6 +104,9 @@ public class PilaVectores extends StackPila{
 					resultado = operandoA / operandoB;
 					push(resultado.toString());
 					break;
+				//Caso contrario a los anteriores,
+				//se pasa al siguiente char y se determina
+				//su clasificacion.
 				default:
 					try {
 						Double test = Double.parseDouble(ch);
@@ -107,6 +115,7 @@ public class PilaVectores extends StackPila{
 				}
 			}catch(Exception NoSuchElementException) {}
 		}
+		//Retorna el resultado postfix
 		return resultado;
 	}
 }
