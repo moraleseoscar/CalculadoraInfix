@@ -11,10 +11,10 @@ public class Fabrica {
 		if(tipo == 1) {
 			return  new PilaArrays();
 		}else if (tipo == 2){
-			return  new PilaArrays();
+			return  new PilaVectores();
 		}else if (tipo == 3) {
 			return  new PilaArrays();
 		}else return null;
-		
+
 	}
 }

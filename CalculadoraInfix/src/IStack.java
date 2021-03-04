@@ -22,6 +22,7 @@ public interface IStack{
 	   // Post-condicion: Devuelve la cantidad de elementos dentro de la pila
 
 	   public Double resolver(String input);
-	   // Post-condicion: Devuelve la cantidad de elementos dentro de la pila
+	   // Pre-condicion: Solicita el string completo de todos los datos para hacer el calculo.
+	   // Post-condicion: Devuelve el calculo resuelto segun la pila necesitada
 
 }
