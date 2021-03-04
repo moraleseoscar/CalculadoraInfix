@@ -5,7 +5,10 @@ import java.util.Stack;
 
 /**
  * @author Oscar Estrada y Marcelo Calderon
-
+Referencias:
+Metodo infix_postfix: GeeksForGeeks
+Autor: anónimo
+Modificado por: Oscar Estrada y Marcelo Calderon
  *
  */
 public abstract class StackPila implements IStack{
