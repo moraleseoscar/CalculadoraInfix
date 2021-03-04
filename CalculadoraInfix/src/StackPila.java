@@ -36,7 +36,8 @@ public abstract class StackPila implements IStack{
 	}
 	
 	public int VMF(char ch){
-
+	//Switch para detectar operador
+	//Suma, resta, multiplicacion, division y potencia
         switch(ch) {
             case '+':
             case '-':
@@ -51,19 +52,25 @@ public abstract class StackPila implements IStack{
         }
         return -1;
     }
-//metodo para convertir de infix a postfix
+//Metodo para convertir de infix a postfix
     public String infix_postfix(String exp){
-
+	//Creacion de la variable resultado
+	//Creacion de stack principal
         String resultado = new String("");
         Stack<Character> stack = new Stack<>();
-
+	//Funcion que recorre el string
         for (int i = 0; i<exp.length(); ++i){
-
+	    //Variable que toma el valor posicional
             char x = exp.charAt(i);
-
+	    
+	    //Condicionales para analizar x
+	    //Acomodan el valor de x de acuerdo al caso
+		//Stacks
             if (Character.isLetterOrDigit(x))
                 resultado += x;
 
+	    //Condicionales para paréntesis
+		//Caso de jerarquía de operaciones
             else if (x == '('){
                 stack.push(x);
             }
@@ -72,7 +79,7 @@ public abstract class StackPila implements IStack{
                     resultado += stack.pop();
                 stack.pop();
             }
-
+	    //Caso de un operador
             else {
                 while (!stack.isEmpty() && VMF(x) <= VMF(stack.peek())){
 
@@ -82,7 +89,7 @@ public abstract class StackPila implements IStack{
             }
 
         }
-
+	//Expulsa todos los caracteres del stack
         while (!stack.isEmpty()) {
             if (stack.peek() == '(')
                 return "Expresion no valida.";
